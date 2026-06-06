@@ -3,7 +3,7 @@ The included Azure Resource Manager (azuredeploy.json) template automates the pr
 
 Azure Function App (Linux, Python): Hosts and executes your serverless security logic.
 
-App Service Plan (Consumption Plan / Y1 Tier): Serverless compute allocation that automatically scales to zero when idle, removing fixed monthly overhead.
+App Service Plan: Serverless compute allocation that automatically scales to zero when idle, removing fixed monthly overhead.
 
 Azure Storage Account (LRS): Required by the function runtime engine for internal state management, coordination keys, and locks.
 
@@ -23,5 +23,5 @@ az group create --name ARM-SecOps-RG --location eastus
 # Run the deployment template
 az deployment group create \\
   --resource-group ARM-SecOps-RG \\
-  --template-file azuredeploy.json \\
+  --template-file arm-template.json \\
   --parameters appName=secops-orchestrator
